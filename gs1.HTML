@@ -3,56 +3,111 @@
 <meta http-equiv="Content-Type"
 content="text/html; charset=windows-1251">
 <title>Стили</title>
-
+<style> p {background-color: #fff;
+        margin: 20px auto;
+        font-family: Arial;
+        font-size: 2em; 
+        text-transform: uppercase;
+        color: rgba(0,168,255,0.5);
+        text-shadow: 8px 8px 0 rgba(255,0,180,0.5);}
+</style>
 <script>
 function er(){
-document.getElementById("out1").value="-1/x^2";
-document.getElementById("out2").value="a/(b*c)";
-document.getElementById("out3").value="(a/b)*c";
-document.getElementById("out4").value="(a+b)/2";
-document.getElementById("out5").value="5,45*(a+2b)/(2-a)";
-document.getElementById("out6").value="(-b+Math.sqrt(b^2-4ac))/(2a)";
-document.getElementById("out7").value="(-b+(1/a))/(2/c)";
-document.getElementById("out8").value="1/(1+(a+b)/2)";
-document.getElementById("out9").value="(1/(1+1/(2+1/(2+3/5))))";
-document.getElementById("out10").value="Math.pow(2,Math.pow(m,n))";
+var a =Number(document.getElementById("var_in").value);
+var b = a;
+a=a*a;
+a=a*a;
+document.getElementById("inf1").innerHTML ="<p>"+"a^4="+a+"</p>" ;
+a=b;
+a=a*a*a;
+a=a*a;
+document.getElementById("inf2").innerHTML ="<p>"+"a^6="+a+"</p>" ;
+a=b;
+a=a*a*a;
+a=a*a;
+a=a*b
+document.getElementById("inf3").innerHTML ="<p>"+"a^7="+a+"</p>" ;
+a=b;
+a=a*a;
+a=a*a;
+a=a*a;
+document.getElementById("inf4").innerHTML ="<p>"+"a^8="+a+"</p>" ;
+a=b;
+a=a*a;
+a=a*a;
+a=a*a;
+a=a*b;
+document.getElementById("inf5").innerHTML ="<p>"+"a^9="+a+"</p>" ;
+a=b;
+a=a*a;
+a=a*a;
+a=a*b;
+a=a*a;
+document.getElementById("inf6").innerHTML ="<p>"+"a^10="+a+"</p>" ;
+
+a=b;
+a=a*a*a;
+a=a*a;
+a=a*a;
+a=a*b;
+document.getElementById("inf7").innerHTML ="<p>"+"a^13="+a+"</p>" ;
+a=b;
+a=a*a;
+a=a*a;
+a=a*b;
+a=a*a;
+a=a*a;
+
+document.getElementById("inf8").innerHTML ="<p>"+"a^15="+a+"</p>" ;
+a=b;
+a=a*a*a;
+a=a*a;
+a=a*b;
+a=a*a*a;
+
+
+document.getElementById("inf9").innerHTML ="<p>"+"a^21="+a+"</p>" ;
+a=b;
+a=a*a;
+a=a*a;
+a=a*b;
+a=a*a;
+a=a*a;
+a=a*b;
+
+document.getElementById("inf10").innerHTML ="<p>"+"a^28="+a+"</p>" ;
+a=b;
+a=a*a;
+a=a*a;
+a=a*a;
+a=a*a;
+a=a*a;
+a=a*a;
+
+document.getElementById("inf11").innerHTML ="<p>"+"a^64="+a+"</p>" ;
+
 
 }
 </script>
 </head>
 <body>
-<button onclick="er()">1.15</button>
+<button onclick="er()">1.61</button>
 <br>
 <br>
-А)<input type="text" value="а" id="out1">
+a=)<input type="text" value="" id="var_in">
 <br>
-<br>
-Б)<input type="text" value="б" id="out2">
-<br>
-<br>
-В)<input type="text" value="в" id="out3">
-<br>
-<br>
-Г)<input type="text" value="г" id="out4">
-<br>
-<br>
-Д)<input type="text" value="д" id="out5">
-<br>
-<br>
-Е)<input type="text" value="е" id="out6">
-<br>
-<br>
-Ж)<input type="text" value="ж" id="out7">
-<br>
-<br>
-З)<input type="text" value="з" id="out8">
-<br>
-<br>
-И)<input type="text" value="и" id="out9">
-<br>
-<br>
-К)<input type="text" value="к" id="out10">
 <br>
 
+<div id="inf1"></div>
+<div id="inf2"></div>
+<div id="inf3"></div>
+<div id="inf4"></div>
+<div id="inf5"></div>
+<div id="inf6"></div>
+<div id="inf7"></div>
+<div id="inf8"></div>
+<div id="inf9"></div>
+<div id="inf10"></div>
+<div id="inf11"></div>
 </body>
 </html>
