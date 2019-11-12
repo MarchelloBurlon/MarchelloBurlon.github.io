@@ -1,0 +1,206 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+  <title>Стили</title>
+  <style>
+    @font-face {
+      font-family: "fairy";
+      src: url(https://MarchelloBurlon.github.io/18096.ttf);
+    }
+    
+    body {
+      display: inline-block;
+      flex-wrap: wrap;
+      align-content: space-between;
+      overflow: hidden;
+      background: linear-gradient(45deg, blue, gold, darkorange, lightgreen, pink, red);
+      mix-blend-mode: multiply;
+    }
+    
+    .gradient {
+      position: fixed;
+top: 80;
+      text-align: left;
+      font-size: 32px;
+      font-family: Fairy;
+      letter-spacing: 5px;
+    }
+        .inp {
+position: fixed;
+top: 40;
+    }
+    
+    .spotlight {
+      background: linear-gradient(to right, #6666ff, #0099ff, #00ff00, #ff3399, #6666ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: rainbow_animation 6s ease-in-out infinite;
+      background-size: 400% 100%;
+      
+    }
+    
+    @keyframes rainbow_animation {
+      0%, 100% {
+        background-position: 0 0;
+      }
+      50% {
+        background-position: 100% 0;
+      }
+    }
+    
+    a.button8 {
+      display: inline-block;
+      padding: 0.2em 1.45em;
+      margin: 0.1em;
+      border: 0.15em solid #CCCCCC;
+      box-sizing: border-box;
+      text-decoration: none;
+      font-family: 'Fairy';
+      font-weight: 400;
+      color: #000000;
+      background-color: #CCCCCC;
+      text-align: center;
+      position: relative;
+    }
+    
+    a.button8:hover {
+      border-color: #7a7a7a;
+      position: relative;
+    }
+    
+    a.button8:active {
+      background-color: #999999;
+      position: relative;
+    }
+    
+    @media all and (max-width:30em) {
+      a.button8 {
+        display: block;
+        margin: 0.2em auto;
+      }
+      .layer1 {
+        position: fixed;
+      }
+    }
+    
+.underlined-a {
+  text-decoration: none;
+  color: aqua;
+  padding-bottom: 0.15em;
+  box-sizing: border-box;
+  box-shadow: inset 0 -0.2em 0 aqua;
+  transition: 0.2s;
+  &:hover {
+    color: #222;
+    box-shadow: inset 0 -2em 0 aqua;
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+}
+
+.brk-btn {
+  position: relative;
+  background: none;
+  color: aqua;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0.2em solid aqua;
+  padding: 0.5em 1em;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: #222;
+    height: 0.3em;
+    right: 20%;
+    top: -0.21em;
+    transform: skewX(-45deg);
+    -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: #222;
+    height: 0.3em;
+    left: 20%;
+    bottom: -0.25em;
+    transform: skewX(45deg);
+    -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  &:hover {
+    &::before {
+      right: 80%;
+    }
+    &::after {
+      left: 80%;
+    }
+  }
+}
+
+  </style>
+  <script>
+  function cl() {
+       document.getElementById("inf1").innerHTML = " "
+     
+    }
+    function er() {
+       document.getElementById("inf1").innerHTML = " "
+      var ab = Number(document.getElementById("var_in").value);
+      document.getElementById("inf1").innerHTML = "десятков " + (ab - ab % 10) / 10 + "<br>единиц " + ab % 10 + "<br>их сумма=" + (ab % 10 + (ab - ab % 10) / 10) + "<br>их произведение=" + (ab % 10 * (ab - ab % 10) / 10);
+    }
+    
+    function er2() {
+      document.getElementById("inf1").innerHTML = " "
+      var abc = document.getElementById("var_in").value;
+      var a,b,c;
+      c= abc%10
+      b= ((abc-c)/10)%10
+      a= (abc-(abc%100))/100
+      document.getElementById("inf1").innerHTML = "десятков " + b + "<br>единиц " +c+ "<br>их сумма=" +(a+b+c) + "<br>их произведение=" + (a*b*c);
+    }
+    function er3() {
+      document.getElementById("inf1").innerHTML = " "
+      var abc = document.getElementById("var_in").value;
+      var a,b,c;
+      c= abc%10
+      b= ((abc-c)/10)%10
+      a= (abc-(abc%100))/100
+      document.getElementById("inf1").innerHTML =   c*100+b*10+a
+    }
+    function er4() {
+      document.getElementById("inf1").innerHTML = " "
+      var abc = document.getElementById("var_in").value;
+      var a,b,c;
+      c= abc%10
+      b= ((abc-c)/10)%10
+      a= (abc-(abc%100))/100
+      document.getElementById("inf1").innerHTML = b*100+c*10+a
+    }
+  </script>
+</head>
+
+<body>
+<a class="brk-btn" onclick="cl()">Clean</a>
+  <a class="brk-btn" onclick="er()">2.10</a>
+  <a class="brk-btn" onclick="er2()">2.12</a>
+  <a class="brk-btn" onclick="er3()">2.13</a>
+  <a class="brk-btn" onclick="er4()">2.14</a>
+  <br>
+
+  <div class="inp">
+    <input type="text" value="57" id="var_in">
+    <br>
+  </div>
+  <div class="gradient">
+    <div class="spotlight" data-text="" id="inf1"></div>
+  </div>
+
+</body>
+
+</html>
