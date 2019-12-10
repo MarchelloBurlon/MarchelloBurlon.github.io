@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
- 
+
 <head>
   <title>canvasExample</title>
   <meta charset='utf-8' />
@@ -44,7 +44,7 @@
       ctx.fillRect(0, 0, 640, 480);
       ctx.closePath();
     }
- 
+
     function er1() {
       clean()
       var canvas = document.getElementById('example');
@@ -63,7 +63,7 @@
       ctx.stroke();
       ctx.closePath();
       ctx.beginPath();
- 
+
       for (x = 0; x <= 640; x = x + 0.1) {
         ctx.lineTo(x * 10 + 6, 10 * Math.sin(x) + 240);
       }
@@ -88,16 +88,16 @@
       ctx.beginPath();
       ctx.closePath();
     }
- 
+
     function er2() {
       clean()
       var canvas = document.getElementById('example');
       var ctx = canvas.getContext('2d');
       ctx.beginPath();
       for (x = -1; x <= 64; x = x + 0.1) {
-        ctx.lineTo(x * 10 + 6, 10 * Math.cos(1/2 * x) + 5 + 240);
+        ctx.lineTo(x * 10 + 6, 10 * Math.cos(1 / 2 * x) + 5 + 240);
       }
-      
+
       ctx.strokeStyle = "blue";
       ctx.lineTo(640, 240);
       ctx.lineTo(0, 240);
@@ -108,10 +108,10 @@
       drawpoint();
       x = Number(document.getElementById("x_znach").value);
       y = Number(document.getElementById("y_znach").value);
-      if ((Math.cos(1/2 * x) -0.5) <0)  {
-        document.getElementById("otvet").innerHTML = "x= " +x + " " +"y= " + (Math.cos(1/2 * x) -0.5)+ "<br>Точка в области, где ф-ция меньше 0";
+      if ((Math.cos(1 / 2 * x) - 0.5) < 0) {
+        document.getElementById("otvet").innerHTML = "x= " + x + " " + "y= " + (Math.cos(1 / 2 * x) - 0.5) + "<br>Точка в области, где ф-ция меньше 0";
       } else {
-        document.getElementById("otvet").innerHTML = "x= " +x + " " +"y= " + (Math.cos(1/2 * x) -0.5)+ "<br>Точка в области, где ф-ция больше 0";
+        document.getElementById("otvet").innerHTML = "x= " + x + " " + "y= " + (Math.cos(1 / 2 * x) - 0.5) + "<br>Точка в области, где ф-ция больше 0";
       }
       ctx.closePath();
       ctx.beginPath();
@@ -123,16 +123,16 @@
       ctx.stroke();
       ctx.closePath();
     }
-    
-function er3() {
+
+    function er3() {
       clean()
       var canvas = document.getElementById('example');
       var ctx = canvas.getContext('2d');
       ctx.beginPath();
       for (x = -1; x <= 64; x = x + 0.1) {
-        ctx.lineTo(x * 100 + 6, 10 * 3*Math.sin(x)-6*Math.cos(x) + 240);
+        ctx.lineTo(x * 40 + 6, 40 * 3 * Math.sin(x) - 6 * Math.cos(x) + 240);
       }
-      
+
       ctx.strokeStyle = "blue";
       ctx.lineTo(640, 240);
       ctx.lineTo(0, 240);
@@ -140,16 +140,7 @@ function er3() {
       ctx.fill();
       ctx.stroke();
       ctx.closePath();
-      drawpoint2();
-      x = Number(document.getElementById("x_znach").value);
-      y = Number(document.getElementById("y_znach").value);
-      if ((Math.cos(1/2 * x) -0.5) <0)  {
-        document.getElementById("otvet").innerHTML = "x= " +x + " " +"y= " + (Math.cos(1/2 * x) -0.5)+ "<br>Точка в области, где ф-ция меньше 0";
-      } else {
-        document.getElementById("otvet").innerHTML = "x= " +x + " " +"y= " + (Math.cos(1/2 * x) -0.5)+ "<br>Точка в области, где ф-ция больше 0";
-      }
-      ctx.closePath();
-      ctx.beginPath();
+       ctx.beginPath();
       ctx.strokeStyle = 'green';
       ctx.moveTo(320, 0);
       ctx.lineTo(320, 480);
@@ -157,8 +148,44 @@ function er3() {
       ctx.lineTo(640, 240);
       ctx.stroke();
       ctx.closePath();
+      ctx.beginPath();
+      x01 = 320 + Math.PI*40+1/Math.tan(2) ;
+      ctx.arc(x01-60, 240, 4, 0, 2 * Math.PI);
+      ctx.stroke();
+      ctx.closePath();
+      ctx.beginPath();
+      x02 = 320-60 + Math.PI*80+1/Math.tan(2) ;
+      ctx.arc(x02, 240, 4, 0, 2 * Math.PI);
+      ctx.stroke();
+      ctx.closePath();
+      ctx.beginPath();
+      x03 = 320-60+ Math.PI*0+1/Math.tan(2) ;
+      ctx.arc(x03, 240, 4, 0, 2 * Math.PI);
+      ctx.stroke();
+      ctx.closePath();
+      ctx.beginPath();
+      x04 = 320-185+ Math.PI*0+1/Math.tan(2) ;
+      ctx.arc(x04, 240, 4, 0, 2 * Math.PI);
+      ctx.stroke();
+      ctx.closePath();
+      drawpoint2();
+  
+
+      x = Number(document.getElementById("x_znach").value);
+      y = Number(document.getElementById("y_znach").value);
+      if (3*Math.sin(x)-6*Math.cos(x)< 0) {
+        document.getElementById("otvet").innerHTML = "x= " + x + " " + "y= " + (3*Math.sin(x)-6*Math.cos(x)) + "<br>Точка в области, где ф-ция меньше 0";
+      } else {
+        document.getElementById("otvet").innerHTML = "x= " + x + " " + "y= " + (3*Math.sin(x)-6*Math.cos(x)) + "<br>Точка в области, где ф-ция больше 0";
+      }
+document.getElementById("otvet").innerHTML =  document.getElementById("otvet").innerHTML +"<br>" + ( Math.PI/2 + Math.PI*0+1/Math.tan(2));
+
+
+
+
+
     }
- 
+
     function drawpoint() {
       x = Number(document.getElementById("x_znach").value);
       y = Number(document.getElementById("y_znach").value);
@@ -170,32 +197,31 @@ function er3() {
       ctx.strokeStyle = 'black';
       ctx.arc(x, y, 1.5, 0, 2 * Math.PI);
       ctx.stroke();
+      ctx.closePath();
     }
+
     function drawpoint2() {
       x = Number(document.getElementById("x_znach").value);
       y = Number(document.getElementById("y_znach").value);
-      x = 320 + x * 100;
-      y = 240 - y * 100;
+      x = 320 + x * 40;
+      y = 240 - y * 40;
+      var canvas = document.getElementById('example');
       var canvas = document.getElementById('example');
       var ctx = canvas.getContext('2d');
       ctx.beginPath();
       ctx.strokeStyle = 'black';
       ctx.arc(x, y, 1.5, 0, 2 * Math.PI);
-      x1= Math.atan(2)+Math.PI
-      document.getElementById("otvet2").innerHTML =x1;
-      ctx.arc(x1, 240, 1.5, 0, 2 * Math.PI);
       ctx.stroke();
+      ctx.closePath();
 
-      
     }
   </script>
 </head>
- 
+
 <body>
   x=
-  <input type="text" value="2" id="x_znach"> 
-  <br>
-  y=
+  <input type="text" value="2" id="x_znach">
+  <br> y=
   <input type="text" value="-1" id="y_znach">
   <br>
   <a href="#" onclick="clean()" class="button purple">Очистить</a>
@@ -210,6 +236,7 @@ function er3() {
   <br>
   <div id="otvet"></div>
   <br>
-    <div id="otvet2"></div>
+  <div id="otvet2"></div>
 </body>
+
 </html>
