@@ -166,7 +166,7 @@
   
       x = Number(document.getElementById("x_znach").value);
       y = Number(document.getElementById("y_znach").value);
-      if (3*Math.sin(x)-6*Math.cos(x)< 0) {
+      if ((3*Math.sin(x)-6*Math.cos(x))< 0) {
         document.getElementById("otvet").innerHTML = "x= " + x + " " + "y= " + (3*Math.sin(x)-6*Math.cos(x)) + "<br>Точка в области, где ф-ция меньше 0";
       } else {
         document.getElementById("otvet").innerHTML = "x= " + x + " " + "y= " + (3*Math.sin(x)-6*Math.cos(x)) + "<br>Точка в области, где ф-ция больше 0";
@@ -196,8 +196,8 @@ document.getElementById("otvet").innerHTML =  document.getElementById("otvet").i
     function drawpoint2() {
       x = Number(document.getElementById("x_znach").value);
       y = Number(document.getElementById("y_znach").value);
-      x = 320 + x * 40;
-      y = 240 - y * 40;
+      x = 320 + x * 20;
+      y = 240 - y * 20;
       var canvas = document.getElementById('example');
       var canvas = document.getElementById('example');
       var ctx = canvas.getContext('2d');
