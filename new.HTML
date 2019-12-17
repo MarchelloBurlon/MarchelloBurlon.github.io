@@ -44,7 +44,6 @@
       ctx.fillRect(0, 0, 640, 480);
       ctx.closePath();
     }
-
     function er1() {
       clean()
       var canvas = document.getElementById('example');
@@ -63,7 +62,6 @@
       ctx.stroke();
       ctx.closePath();
       ctx.beginPath();
-
       for (x = 0; x <= 640; x = x + 0.1) {
         ctx.lineTo(x * 10 + 6, 10 * Math.sin(x) + 240);
       }
@@ -88,7 +86,6 @@
       ctx.beginPath();
       ctx.closePath();
     }
-
     function er2() {
       clean()
       var canvas = document.getElementById('example');
@@ -97,7 +94,6 @@
       for (x = -1; x <= 64; x = x + 0.1) {
         ctx.lineTo(x * 10 + 6, 10 * Math.cos(1 / 2 * x) + 5 + 240);
       }
-
       ctx.strokeStyle = "blue";
       ctx.lineTo(640, 240);
       ctx.lineTo(0, 240);
@@ -123,16 +119,14 @@
       ctx.stroke();
       ctx.closePath();
     }
-
     function er3() {
       clean()
       var canvas = document.getElementById('example');
       var ctx = canvas.getContext('2d');
       ctx.beginPath();
       for (x = -1; x <= 64; x = x + 0.1) {
-        ctx.lineTo(x * 40 + 6, 40 * 3 * Math.sin(x) - 6 * Math.cos(x) + 240);
+        ctx.lineTo(x * 20 + 6, 20 * (3 * Math.sin(x) - 6 * Math.cos(x)) + 240);
       }
-
       ctx.strokeStyle = "blue";
       ctx.lineTo(640, 240);
       ctx.lineTo(0, 240);
@@ -150,27 +144,26 @@
       ctx.closePath();
       ctx.beginPath();
       x01 = 320 + Math.PI*40+1/Math.tan(2) ;
-      ctx.arc(x01-60, 240, 4, 0, 2 * Math.PI);
+      ctx.arc(x01-40, 240, 4, 0, 2 * Math.PI);
       ctx.stroke();
       ctx.closePath();
       ctx.beginPath();
-      x02 = 320-60 + Math.PI*80+1/Math.tan(2) ;
+      x02 = 320-229 + Math.PI*80+1/Math.tan(2) ;
       ctx.arc(x02, 240, 4, 0, 2 * Math.PI);
       ctx.stroke();
       ctx.closePath();
       ctx.beginPath();
-      x03 = 320-60+ Math.PI*0+1/Math.tan(2) ;
+      x03 = 320-103+ Math.PI*0+1/Math.tan(2) ;
       ctx.arc(x03, 240, 4, 0, 2 * Math.PI);
       ctx.stroke();
       ctx.closePath();
       ctx.beginPath();
-      x04 = 320-185+ Math.PI*0+1/Math.tan(2) ;
+      x04 = 320-228+ Math.PI*0+1/Math.tan(2) ;
       ctx.arc(x04, 240, 4, 0, 2 * Math.PI);
       ctx.stroke();
       ctx.closePath();
       drawpoint2();
   
-
       x = Number(document.getElementById("x_znach").value);
       y = Number(document.getElementById("y_znach").value);
       if (3*Math.sin(x)-6*Math.cos(x)< 0) {
@@ -178,14 +171,15 @@
       } else {
         document.getElementById("otvet").innerHTML = "x= " + x + " " + "y= " + (3*Math.sin(x)-6*Math.cos(x)) + "<br>Точка в области, где ф-ция больше 0";
       }
-document.getElementById("otvet").innerHTML =  document.getElementById("otvet").innerHTML +"<br>" + ( Math.PI/2 + Math.PI*0+1/Math.tan(2));
+document.getElementById("otvet").innerHTML =  document.getElementById("otvet").innerHTML 
++"<br>" + ( Math.PI/2 + Math.PI*0+1/Math.tan(2))
 
++"<br>" + ( Math.PI/2 + Math.PI*1+1/Math.tan(2))
 
++"<br>" + ( Math.PI/2 + Math.PI*-1+1/Math.tan(2))
 
-
-
++"<br>" + ( Math.PI/2 + Math.PI*-2+1/Math.tan(2));
     }
-
     function drawpoint() {
       x = Number(document.getElementById("x_znach").value);
       y = Number(document.getElementById("y_znach").value);
@@ -199,7 +193,6 @@ document.getElementById("otvet").innerHTML =  document.getElementById("otvet").i
       ctx.stroke();
       ctx.closePath();
     }
-
     function drawpoint2() {
       x = Number(document.getElementById("x_znach").value);
       y = Number(document.getElementById("y_znach").value);
@@ -213,7 +206,6 @@ document.getElementById("otvet").innerHTML =  document.getElementById("otvet").i
       ctx.arc(x, y, 1.5, 0, 2 * Math.PI);
       ctx.stroke();
       ctx.closePath();
-
     }
   </script>
 </head>
