@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<script>
+'use strict';
+
+let i = 21;
+do {
+  alert( i );
+  i++;
+} while (i < 35);
+</script>
