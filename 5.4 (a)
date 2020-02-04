@@ -91,22 +91,6 @@ background: #D8E6F3;
         document.getElementById(temp2).appendChild(z2);
       
       }
-      
-   CreateRow3()
-       var b = Number(document.getElementById("in1").value);
-		for (var i = 0; i <= b; i++) {
-        var z2 = document.createElement("TD");
-        example = i*i;
-        var l = document.createTextNode(example);
-        z2.appendChild(l);
-        document.getElementById(temp3).appendChild(z2);
-      
-      }
-      
-        
-        
-      
-
     }
   </script>
 </head>
@@ -123,5 +107,3 @@ background: #D8E6F3;
 
 
 </body>
-
-</html>
