@@ -28,7 +28,7 @@
     td {
       background: #D8E6F3;
       text-align: left;
-      max-width: 100px;
+      max-width: 400px;
       min-width: 30px;
     }
   </style>
@@ -43,6 +43,7 @@
     sum1 = 0
     sum2 = 0
     flag = 0
+    stepa=1
     function CreateTable() {
       var x = document.createElement("TABLE");
       x.setAttribute("id", "myTable");
@@ -60,8 +61,8 @@
         CreateTable()
       }
       flag = 1
-      var b = Number(document.getElementById("in1").value);
-      for (var i = 1; i <= b; i++) {
+      var b = 10
+      for (var i = 2; i <= b; i++) {
         temp1 = "Tr" + c
         var x = document.createElement("TR");
         x.setAttribute("id", temp1);
@@ -76,35 +77,26 @@
           document.getElementById(temp1).appendChild(y);
         }
         for (j = 0; j < 1; j++) {
-          temp2 = "Td" 
+          temp2 = "Td" + l
           var z = document.createElement("TD");
           z.setAttribute("id", temp2);
-          t = document.createTextNode(example1);
+          sum1 += (1 / (stepa))
+          
+          t = document.createTextNode(1+ "/" + stepa + "=" + 1 / stepa + ";" + sum1);
+          stepa=stepa*3;
           z.appendChild(t);
-          sum1 += example1
-          example1 = example1 ;
+
           document.getElementById(temp1).appendChild(z);
           l += 2;
         }
-        for (j = 0; j < 1; j++) {
-          temp3 = "Td" + m
-          var z = document.createElement("TD");
-          z.setAttribute("id", temp3);
-          t = document.createTextNode(example2);
-          z.appendChild(t);
-          sum2 += example2;
-        
-          example2 = example2 / 3;
-          document.getElementById(temp1).appendChild(z);
-          m += 2
-        }
+
       }
 
       addanswer();
       document.getElementById("answ1").innerHTML = sum1
-      document.getElementById("answ2").innerHTML = sum2
+
       sum1 = 0;
-      sum2 = 0;
+
     }
 
 
